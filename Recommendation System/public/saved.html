@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View and manage your saved jewelry recommendations on Lumière.">
+    <title>Saved Recommendations — Lumière</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <!-- ======================== SAVED PAGE ======================== -->
+    <div class="saved-page">
+        <h1>Saved <span class="text-gold">Jewelry</span></h1>
+
+        <!-- Controls -->
+        <div class="saved-controls">
+            <input type="text" class="search-input" id="search-input" placeholder="Search saved items...">
+            <select class="filter-select" id="filter-select">
+                <option value="all">All</option>
+                <option value="necklace">Necklace</option>
+                <option value="ring">Ring</option>
+                <option value="earrings">Earrings</option>
+                <option value="bracelet">Bracelet</option>
+                <option value="bangle">Bangle</option>
+            </select>
+        </div>
+
+        <!-- Saved Grid -->
+        <div id="saved-grid" class="saved-grid">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="empty-state" style="display: none;">
+            <div class="empty-state-icon">💎</div>
+            <h2>No Saved Items Yet</h2>
+            <p>Start exploring recommendations to save your favorites</p>
+            <a href="/preferences.html" class="btn btn-primary">Get Recommendations</a>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/api.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/saved.js"></script>
+
+</body>
+</html>

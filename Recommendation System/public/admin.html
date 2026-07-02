@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lumière Admin Dashboard — manage products, view statistics, and monitor activity.">
+    <title>Admin Panel — Lumière</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <!-- ======================== ADMIN PAGE ======================== -->
+    <div class="admin-page">
+        <h1>Admin <span class="text-gold">Dashboard</span></h1>
+
+        <!-- Stats Section -->
+        <div class="admin-stats">
+            <div class="stat-card">
+                <h3 id="stat-products">0</h3>
+                <p>Total Products</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="stat-recommendations">0</h3>
+                <p>Total Recommendations</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="stat-category">—</h3>
+                <p>Top Category</p>
+            </div>
+        </div>
+
+        <!-- Manage Products Section -->
+        <div class="admin-section">
+            <div class="admin-section-header">
+                <h2>Manage Products</h2>
+                <button id="add-product-btn" class="btn btn-primary">+ Add Product</button>
+            </div>
+            <div class="admin-table-wrapper">
+                <table id="products-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Occasion</th>
+                            <th>Metal</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Recent Activity Section -->
+        <div class="admin-section">
+            <h2>Recent Activity</h2>
+            <div id="recent-activity">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ======================== PRODUCT MODAL ======================== -->
+    <div id="product-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modal-title">Add Product</h2>
+            <form id="product-form">
+
+                <div class="form-group">
+                    <label for="product-title">Title</label>
+                    <input type="text" id="product-title" name="title" placeholder="Product title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-description">Description</label>
+                    <textarea id="product-description" name="description" placeholder="Product description" rows="3" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product-category">Category</label>
+                        <select id="product-category" name="category" required>
+                            <option value="">Select category</option>
+                            <option value="necklace">Necklace</option>
+                            <option value="ring">Ring</option>
+                            <option value="earrings">Earrings</option>
+                            <option value="bracelet">Bracelet</option>
+                            <option value="bangle">Bangle</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-occasion">Occasion</label>
+                        <select id="product-occasion" name="occasion" required>
+                            <option value="">Select occasion</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="party">Party</option>
+                            <option value="casual">Casual</option>
+                            <option value="traditional">Traditional</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product-style">Style</label>
+                        <select id="product-style" name="style" required>
+                            <option value="">Select style</option>
+                            <option value="minimal">Minimal</option>
+                            <option value="royal">Royal</option>
+                            <option value="modern">Modern</option>
+                            <option value="vintage">Vintage</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-metal">Metal</label>
+                        <select id="product-metal" name="metal" required>
+                            <option value="">Select metal</option>
+                            <option value="gold">Gold</option>
+                            <option value="silver">Silver</option>
+                            <option value="diamond">Diamond</option>
+                            <option value="rosegold">Rose Gold</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product-budget">Budget Range</label>
+                        <select id="product-budget" name="budgetRange" required>
+                            <option value="">Select budget range</option>
+                            <option value="under-5000">Under ₹5,000</option>
+                            <option value="5000-20000">₹5,000 – ₹20,000</option>
+                            <option value="20000-50000">₹20,000 – ₹50,000</option>
+                            <option value="50000-plus">₹50,000+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-color">Color</label>
+                        <select id="product-color" name="color" required>
+                            <option value="">Select color</option>
+                            <option value="gold">Gold</option>
+                            <option value="silver">Silver</option>
+                            <option value="white">White</option>
+                            <option value="mixed">Mixed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-price">Price (₹)</label>
+                    <input type="number" id="product-price" name="price" placeholder="e.g. 15000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-image">Image URL</label>
+                    <input type="url" id="product-image" name="image" placeholder="https://example.com/image.jpg">
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" id="modal-cancel-btn" class="btn btn-secondary">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/api.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/admin.js"></script>
+
+</body>
+</html>

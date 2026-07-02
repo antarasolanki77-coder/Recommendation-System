@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your Lumière profile, update preferences, and view your recommendation history.">
+    <title>Profile — Lumière</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <!-- ======================== PROFILE PAGE ======================== -->
+    <div class="profile-page">
+
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile-avatar" id="profile-avatar">
+                <span id="avatar-initials">U</span>
+            </div>
+            <h1 id="profile-name">User Name</h1>
+            <p id="profile-email">user@example.com</p>
+            <p class="profile-member-since">Member since <span id="member-since">—</span></p>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+
+            <!-- Edit Profile Section -->
+            <div class="profile-section">
+                <h2>Edit Profile</h2>
+                <form id="edit-profile-form">
+                    <div class="form-group">
+                        <label for="edit-name">Full Name</label>
+                        <input type="text" id="edit-name" name="name" placeholder="Your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-email">Email Address</label>
+                        <input type="email" id="edit-email" name="email" placeholder="you@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-password">New Password</label>
+                        <input type="password" id="edit-password" name="password" placeholder="Leave blank to keep current">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+
+            <!-- Recommendation History Section -->
+            <div class="profile-section">
+                <h2>Recommendation History</h2>
+                <div id="recommendation-history">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/api.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/auth.js"></script>
+
+</body>
+</html>

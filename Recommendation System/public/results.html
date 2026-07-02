@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your personalized AI jewelry recommendations from Lumière, matched to your unique preferences.">
+    <title>Your Recommendations — Lumière</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <!-- ======================== RESULTS PAGE ======================== -->
+    <div class="results-page">
+
+        <!-- Results Header -->
+        <div class="results-header">
+            <h1>Your <span class="text-gold">Perfect</span> Matches</h1>
+            <p>Based on your preferences, here are our top recommendations</p>
+
+            <div class="results-summary" id="results-summary">
+                <!-- Preference tags injected by JS -->
+            </div>
+
+            <div class="results-actions">
+                <a href="/preferences.html" class="btn btn-secondary">Try Again</a>
+                <button id="share-btn" class="btn btn-outline">Share Results</button>
+            </div>
+        </div>
+
+        <!-- Results Grid -->
+        <div id="results-grid" class="results-grid">
+            <!--
+                Each card populated by JS:
+                <div class="result-card">
+                    <div class="result-card-image">
+                        <img src="..." alt="...">
+                        <div class="match-badge">95% Match</div>
+                    </div>
+                    <div class="result-card-body">
+                        <h3 class="title">Jewelry Title</h3>
+                        <p class="price">₹12,500</p>
+                        <div class="result-reasons">
+                            <span class="reason-pill">Gold</span>
+                            <span class="reason-pill">Wedding</span>
+                        </div>
+                        <div class="result-card-actions">
+                            <button class="btn btn-primary save-btn">Save</button>
+                            <button class="btn btn-outline details-btn">Details</button>
+                        </div>
+                    </div>
+                </div>
+            -->
+        </div>
+
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p>Finding your perfect matches...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/api.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/results.js"></script>
+
+</body>
+</html>
